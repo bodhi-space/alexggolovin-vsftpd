@@ -1,0 +1,8 @@
+{
+  "ChangeLog": "5952f226f3439fc36245b9f377df438c",
+  "LICENSE": "c1e7cb25d2912c49ebcea387ada981db",
+  "Modulefile": "0c5b731d7c6572133d998bada1e1b072",
+  "README.md": "1000a89f59d4138ed8155d87a0d01cef",
+  "files/local_enabled.conf": "acc948c0380696df1b45ee71cd5ed3c9",
+  "manifests/init.pp": "ed662bb1ad9c3e5284e41fe3c870863f"
+}
