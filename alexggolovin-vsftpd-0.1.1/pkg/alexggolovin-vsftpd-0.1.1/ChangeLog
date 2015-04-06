@@ -1,0 +1,6 @@
+2015-04-06 - 0.1.1
+* welcome.txt ascii banner file added to the package
+
+2015-04-01 - 0.1.0
+* Required vsftpd.conf configuration file maintained
+* vsftpd server deployed and tested

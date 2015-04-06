@@ -1,0 +1,8 @@
+name 'alexggolovin-vsftpd'
+version '0.1.1'
+source 'git://github.com/alexggolovin/alexggolovin-vsftpd'
+author 'Alexander Golovin'
+license 'Apache 2.0'
+summary 'vsftpd FTP server'
+description "vsftpd FTP server deploy with pre-configured permissions for local Linux system users for download/upload into their home foloders only;"
+project_page 'https://github.com/alexggolovin/alexggolovin-vsftpd'
