@@ -1,0 +1,10 @@
+2015-04-07 - 0.1.2
+* Module structure changes: OS depends options moved to params class, vsftpd class parameters added for new template based configuration file vsftpd.conf.erb, vsftpd::content class added for manage anonymous users content;
+* CentOS/RedHat/Debian/Ubuntu distribution support added; 
+
+2015-04-06 - 0.1.1
+* welcome.txt ascii banner file added to the package
+
+2015-04-01 - 0.1.0
+* Required vsftpd.conf configuration file maintained
+* vsftpd server deployed and tested
