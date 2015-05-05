@@ -49,7 +49,6 @@ class vsftpd(
  $guest_enable		 = 'YES',
  $guest_username	 = 'virtual',
  $virtual_use_local_privs= 'YES',
- $pam_service_name       = 'vsftpd_virt',
  $ftpuser 		 = hiera('ftpuser'),
 )
 inherits ::vsftpd::params { 
@@ -58,20 +57,70 @@ inherits ::vsftpd::params {
         ensure => 'installed',
         }
 
- if $enable_virtual == 'YES' {
-
-   file {"${configdir}/vsftpd.conf":
-        content => template($template_virtusers),
-        require => Package[$distropackage],
-        }
-     }
-
- else {
-
-   file {"${configdir}/vsftpd.conf":
+ if $enable_virtual == 'NO' {
+     $pam_service_name = 'vsftpd'
+     file {"${configdir}/vsftpd.conf":
         content => template($template_realusers),
         require => Package[$distropackage],
         }
+     case $operatingsystem {
+        'RedHat',
+        'CentOS': {
+           exec {"selinux-systemusers":
+           command => ["setsebool -P ftp_home_dir=1"],
+           path    => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ],
+           }
+         }
+       }
+ }
+
+ elsif $enable_virtual == 'YES' {
+     
+     $pam_service_name = 'vsftpd_virt'
+     
+     file {"${configdir}/vsftpd.conf":
+        content => template($template_virtusers),
+        require => Package[$distropackage],
+        }
+
+     package {'db-util':
+        ensure => installed,
+         }
+
+     file {'/etc/pam.d/vsftpd_virt':
+        ensure => file,
+        content => template('vsftpd/pam_ftp.erb'),
+         }
+
+     user {'virtual':
+        ensure => present,
+        home => '/home/virtual',
+        managehome => true,
+        shell => '/bin/false',
+        }
+
+         file {'/etc/vsftpd_users.txt':
+        ensure => file,
+        content => template('vsftpd/vsftpd_users.erb'),
+         }
+
+      exec {"db_load":
+        require => File['/etc/vsftpd_users.txt'],
+        path    => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ],
+        command => "db_load -T -t hash -f /etc/vsftpd_users.txt /etc/vsftpd_logins.db",
+         }
+	
+      case $operatingsystem {
+           'RedHat',
+           'CentOS': {
+           exec {"selinux-virtualusers":
+           command => ["setsebool -P ftp_home_dir=1 && chcon -R -t public_content_rw_t /home/virtual"],
+           path    => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ],
+           onlyif  => "test -f /home/virtual",
+           }
+          }
+         }
+
      }
 
  service {$service_name:
@@ -79,34 +128,8 @@ inherits ::vsftpd::params {
         enable => 'true',
         ensure => 'true',
         subscribe => File["${configdir}/vsftpd.conf"],
-        }
-
- package {'db-util':
-        ensure => installed,
-         }
-
- file {'/etc/pam.d/vsftpd_virt':
-        ensure => file,
-        content => template('vsftpd/pam_ftp.erb'),
-         }
-
- user {'virtual':
-        ensure => present,
-        home => '/home/virtual',
-        managehome => true,
-        shell => '/bin/false',
-         }
-
- file {'/etc/vsftpd_users.txt':
-        ensure => file,
-        content => template('vsftpd/vsftpd_users.erb'),
-         }
-
- exec {"db_load":
-     require => File['/etc/vsftpd_users.txt'],
-     path    => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ],
-     command => "db_load -T -t hash -f /etc/vsftpd_users.txt /etc/vsftpd_logins.db",
-    }
+     }
+ 
 
 include ::vsftpd::content
 }

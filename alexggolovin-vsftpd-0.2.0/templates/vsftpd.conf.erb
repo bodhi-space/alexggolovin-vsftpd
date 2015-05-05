@@ -66,6 +66,11 @@ write_enable=NO
 write_enable=<%= @write_enable %>
 <% end -%>
 
+#
+# Default umask for local users is 077. You may wish to change this to 022,
+# if your users expect that (022 is used by most other ftpd's)
+#local_umask=022
+
 # Activate directory messages - messages given to remote users when they
 # go into a certain directory.
 dirmessage_enable=<%= @dirmessage_enable %>
@@ -149,10 +154,8 @@ allow_writeable_chroot=<%= @allow_writeable_chroot %>
 <% end -%>
 
 #configured by user
-local_umask=<%= @local_umask %>
-pasv_enable=<%= @pasv_enable %>
-pasv_min_port=<%= @pasv_min_port %>
-pasv_max_port=<%= @pasv_max_port %>
+#pasv_min_port=<%= @pasv_min_port %>
+#pasv_max_port=<%= @pasv_max_port %>
  
 #
 # You may specify an explicit list of local users to chroot() to their home
@@ -183,9 +186,13 @@ pasv_max_port=<%= @pasv_max_port %>
 # access.
 #secure_chroot_dir=/var/run/vsftpd/empty
 #
+# This string is the name of the PAM service vsftpd will use.
+pam_service_name=<%= pam_service_name %>
+
+#
 # This option specifies the location of the RSA certificate to use for SSL
 # encrypted connections.
-rsa_cert_file=<%= @rsa_cert_file %>
-rsa_private_key_file=<%= @rsa_private_key_file %>
-ssl_enable=<%= @ssl_enable %>
+rsa_cert_file=<%= rsa_cert_file %>
+rsa_private_key_file=<%= rsa_private_key_file %>
+ssl_enable=<%= ssl_enable %>
 

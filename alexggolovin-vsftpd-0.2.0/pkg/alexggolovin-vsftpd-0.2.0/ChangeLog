@@ -1,6 +1,7 @@
-2015-05-04 - 0.2.0
+2015-05-05 - 0.2.0
 * Hiera lookup integrated for the virtual users usernames and passwords stored out of module in hiera datasource yaml file on puppet master server;
 * Virtual users with Berkley database configuration added;
+* SELinux ftp_home_dir boolean enabled for realusers and "/home/virtual" virtual users directory context changed for virtual users case usage; 
 
 2015-04-08 - 0.1.4
 * puppet module uninstall error fixed;
