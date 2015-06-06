@@ -1,3 +1,7 @@
+2015-06-07 - 0.2.3
+* Changes done with hiera configuration requirement disabled in installation by default
+"$ftpuser = hiera('ftpuser')" now is enabled only if virtual users enabled
+
 2015-06-06 - 0.2.2
 * Hiera configuration requirement disabled in installation by default
 
