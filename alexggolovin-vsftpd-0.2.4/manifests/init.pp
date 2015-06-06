@@ -76,7 +76,7 @@ inherits ::vsftpd::params {
 
  elsif $enable_virtual == 'YES' {
      
-     $ftpuser = hiera('ftpuser'),
+     $ftpuser = hiera('ftpuser')
      $pam_service_name = 'vsftpd_virt'
      
      file {"${configdir}/vsftpd.conf":
