@@ -1,0 +1,29 @@
+2015-06-06 - 0.2.2
+* Hiera configuration requirement disabled in installation by default
+
+2015-05-10 - 0.2.1
+* Berkley db RedHat/Debian based distributions package dependencies added: libdb-utils -> rpm; db-util -> deb
+* Debian7,RedHat6,Centos6 default anonymous only support disabled
+
+2015-05-05 - 0.2.0
+* Hiera lookup integrated for the virtual users usernames and passwords stored out of module in hiera datasource yaml file on puppet master server;
+* Virtual users with Berkley database configuration added;
+* SELinux ftp_home_dir boolean enabled for realusers and "/home/virtual" virtual users directory context changed for virtual users case usage; 
+
+2015-04-08 - 0.1.4
+* puppet module uninstall error fixed;
+
+2015-04-08 - 0.1.3
+* Modulefile removed;
+* metadata.json modified, new tags added;
+
+2015-04-07 - 0.1.2
+* Module structure changes: OS depends options moved to params class, vsftpd class parameters added for new template based configuration file vsftpd.conf.erb, vsftpd::content class added for manage anonymous users content;
+* CentOS/RedHat/Debian/Ubuntu distribution support added; 
+
+2015-04-06 - 0.1.1
+* welcome.txt ascii banner file added to the package
+
+2015-04-01 - 0.1.0
+* Required vsftpd.conf configuration file maintained
+* vsftpd server deployed and tested
