@@ -46,10 +46,11 @@ class vsftpd(
  $rsa_private_key_file   = '/etc/ssl/private/ssl-cert-snakeoil.key',                                                         
  $ssl_enable             = 'NO',                                                                                             
 #Virtual users configurations:
- $enable_virtual	 = 'NO',
+ $enable_virtual	 = 'YES',
  $guest_enable		 = 'YES',
  $guest_username	 = 'virtual',
  $virtual_use_local_privs= 'YES',
+ $ftpuser = hiera('ftpuser', ''),
 )
 inherits ::vsftpd::params { 
 
@@ -76,7 +77,6 @@ inherits ::vsftpd::params {
 
  elsif $enable_virtual == 'YES' {
      
-     $ftpuser = hiera('ftpuser')
      $pam_service_name = 'vsftpd_virt'
      
      file {"${configdir}/vsftpd.conf":

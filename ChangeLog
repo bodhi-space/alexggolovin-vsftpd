@@ -1,5 +1,6 @@
-2015-06-06 - 0.2.2
-* Hiera configuration requirement disabled in installation by default
+2015-06-07 - 0.2.5
+* Changes done with hiera configuration requirement disabled in installation by default
+"$ftpuser = hiera('ftpuser','') -> default hiera empty data added, it continues run module if hiera not configured just empty users file created for berkley db virtual users
 
 2015-05-10 - 0.2.1
 * Berkley db RedHat/Debian based distributions package dependencies added: libdb-utils -> rpm; db-util -> deb
