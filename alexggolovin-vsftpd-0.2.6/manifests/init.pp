@@ -46,7 +46,7 @@ class vsftpd(
  $rsa_private_key_file   = '/etc/ssl/private/ssl-cert-snakeoil.key',                                                         
  $ssl_enable             = 'NO',                                                                                             
 #Virtual users configurations:
- $enable_virtual	 = 'YES',
+ $enable_virtual	 = 'NO',
  $guest_enable		 = 'YES',
  $guest_username	 = 'virtual',
  $virtual_use_local_privs= 'YES',
