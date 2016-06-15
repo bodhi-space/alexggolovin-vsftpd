@@ -1,9 +1,0 @@
-{
-  "ChangeLog": "880c0c30924ebef3a760aaca17b7f7c6",
-  "LICENSE": "c1e7cb25d2912c49ebcea387ada981db",
-  "Modulefile": "c4d5fa852ae153217b740d325e2a2458",
-  "README.md": "1000a89f59d4138ed8155d87a0d01cef",
-  "files/local_enabled.conf": "acc948c0380696df1b45ee71cd5ed3c9",
-  "files/welcome.txt": "5e937e9f68cbc5665ea90eebdaf15ed5",
-  "manifests/init.pp": "989bd0708597bfea785e89d176a1d854"
-}
