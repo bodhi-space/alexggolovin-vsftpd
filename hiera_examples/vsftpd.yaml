@@ -1,0 +1,7 @@
+#Hiera datasource file example
+---
+vsftpd::ftpuser:
+ - sasha
+ - 12345
+ - bob
+ - 1111

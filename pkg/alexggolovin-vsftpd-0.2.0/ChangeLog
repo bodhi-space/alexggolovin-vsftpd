@@ -1,0 +1,22 @@
+2015-05-05 - 0.2.0
+* Hiera lookup integrated for the virtual users usernames and passwords stored out of module in hiera datasource yaml file on puppet master server;
+* Virtual users with Berkley database configuration added;
+* SELinux ftp_home_dir boolean enabled for realusers and "/home/virtual" virtual users directory context changed for virtual users case usage; 
+
+2015-04-08 - 0.1.4
+* puppet module uninstall error fixed;
+
+2015-04-08 - 0.1.3
+* Modulefile removed;
+* metadata.json modified, new tags added;
+
+2015-04-07 - 0.1.2
+* Module structure changes: OS depends options moved to params class, vsftpd class parameters added for new template based configuration file vsftpd.conf.erb, vsftpd::content class added for manage anonymous users content;
+* CentOS/RedHat/Debian/Ubuntu distribution support added; 
+
+2015-04-06 - 0.1.1
+* welcome.txt ascii banner file added to the package
+
+2015-04-01 - 0.1.0
+* Required vsftpd.conf configuration file maintained
+* vsftpd server deployed and tested

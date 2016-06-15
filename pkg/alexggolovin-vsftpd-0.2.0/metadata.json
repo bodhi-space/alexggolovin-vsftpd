@@ -1,0 +1,19 @@
+{
+  "name": "alexggolovin-vsftpd",
+  "version": "0.2.0",
+  "author": "Alexander Golovin",
+  "summary": "LINUX-VSFTPD",
+  "license": "Apache 2.0",
+  "source": "https://github.com/alexggolovin/alexggolovin-vsftpd",
+  "project_page": "https://github.com/alexggolovin/alexggolovin-vsftpd",
+  "issues_url": "https://github.com/alexggolovin/alexggolovin-vsftpd/issues",
+  "description": "vsftpd FTP server deploy with pre-configured options",
+  "tags": [
+    "vsftpd",
+    "ftp",
+    "alexggolovin"
+  ],
+  "dependencies": [
+  
+  ]
+}

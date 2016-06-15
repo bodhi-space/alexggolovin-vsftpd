@@ -1,0 +1,16 @@
+{
+  "ChangeLog": "550882260864d481fabb4cec1d7f084b",
+  "LICENSE": "b9e1480eb20d192b11e31b2df03f1bb0",
+  "README.md": "af2888b1e7a197785ba79d3855bdd976",
+  "files/welcome.txt": "5e937e9f68cbc5665ea90eebdaf15ed5",
+  "hiera_examples/hiera.yaml": "3c1462057d673493407c4f56f27e869d",
+  "hiera_examples/vsftpd.yaml": "4290b41af6538762e73a205814e6331a",
+  "manifests/content.pp": "b71541fa69a615a53867a4f9537f1928",
+  "manifests/init.pp": "3b6286d2330989dc33902d7aa233bf53",
+  "manifests/params.pp": "f431650686a2e546022ae47957063252",
+  "metadata.json": "9ec958dfe8c1ba80564ee7369809f1a8",
+  "templates/pam_ftp.erb": "79e6d6cb9696fcfa1a5f9dcd2e655dfa",
+  "templates/vsftpd.conf.erb": "63004cbec6a689a0a4c8b6f38c9e3e1d",
+  "templates/vsftpd_users.erb": "7e70a8f5e113873f1b0d6493e57f06f8",
+  "templates/vsftpd_virt.conf.erb": "7fe01b119bf6e6f63cdcf3be6f8c233f"
+}
