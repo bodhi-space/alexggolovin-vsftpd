@@ -10,7 +10,8 @@ class vsftpd::params {
   #OS depend options
   case $operatingsystem {                                                                                                    
     'CentOS',                                                                                                                
-    'RedHat': {                                                                                                              
+    'RedHat',
+    'Amazon': {                                                                                                              
       $dir = '/etc/vsftpd'
       $package = 'vsftpd'
       $service = 'vsftpd'
