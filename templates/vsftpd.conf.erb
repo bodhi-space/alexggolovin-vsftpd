@@ -1,11 +1,9 @@
-###################################################################################                                          
-#                                                                                                                            
-# CONFIGURED BY PUPPET                                                                                                       
-#                                                                                                                            
-# Required configuration options marked by "#configured by user" comment                                         
-#                                                                                                                            
-###################################################################################                                          
-
+###################################################################################
+#
+# CONFIGURED BY PUPPET
+# Required configuration options marked by "#configured by user" comment
+#
+###################################################################################
 
 # Example config file /etc/vsftpd.conf
 #
@@ -16,7 +14,6 @@
 # READ THIS: This example file is NOT an exhaustive list of vsftpd options.
 # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
 # capabilities.
-#
 #
 # Run standalone?  vsftpd can run either from an inetd or as a standalone
 # daemon started from an initscript.
@@ -41,6 +38,9 @@ listen_ipv6=<%= @listen_ipv6 %>
 #anon_root=/var/ftp
 #anon_upload_enable=NO
 #anon_mkdir_write_enable=NO
+
+# guest enable
+guest_enable=<%= @guest_enable %>
 
 #Debian-8/Ubuntu-14/CentOS-7/RedHat-7 - full supported distributions
 anonymous_enable=<%= @anonymous_enable %>
@@ -154,13 +154,16 @@ connect_from_port_20=<%= @connect_from_port_20 %>
 
 #Debian-8/Ubuntu-14/CentOS-7/RedHat-7 - full supported distributions
 chroot_local_user=<%= @chroot_local_user %>
-allow_writeable_chroot=<%= @allow_writeable_chroot %>
+#allow_writeable_chroot=<%= @allow_writeable_chroot %>
 
 
 #configured by user
 #Firewall opened ports for passive mode 
 #pasv_min_port=<%= @pasv_min_port %>
 #pasv_max_port=<%= @pasv_max_port %>
+
+# passv mode
+pasv_enable=<%= @pasv_enable %>
  
 #
 # You may specify an explicit list of local users to chroot() to their home
