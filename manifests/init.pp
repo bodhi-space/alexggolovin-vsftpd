@@ -51,7 +51,7 @@ class vsftpd(
  $guest_enable		        = 'YES',
  $guest_username	        = 'virtual',
  $virtual_use_local_privs = 'YES',
- $ftpuser = hiera('ftpuser', ''),
+ $ftpuser                 = hiera('ftpuser', ''),
 )
 inherits ::vsftpd::params { 
 
