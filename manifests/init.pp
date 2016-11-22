@@ -104,7 +104,7 @@ inherits ::vsftpd::params {
       ensure => "directory",
       owner  => "virtual",
       group  => "virtual",
-      mode   => 770,
+      mode   => "770",
       require => User['virtual'],
     }
            
